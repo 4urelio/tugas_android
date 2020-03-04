@@ -5,26 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
+    android:background="#A8E6CF"
     tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:textAlignment="center"
+        android:textSize="70dp"
+        android:text="Tugas Harian"
+        />
 
 
     <EditText
         android:id="@+id/Email"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Email"
         />
 
     <EditText
         android:id="@+id/Pass"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:inputType="textPassword"
         />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Login"/>
 
