@@ -9,12 +9,12 @@
     android:background="#A8E6CF"
     tools:context=".MainActivity">
 
-    <EditText
+    <TextView
         android:layout_width="350dp"
         android:layout_height="200dp"
-        android:textAlignment="center"
-        android:textSize="70dp"
-        android:text="Tugas Harian"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:text="Login Page"
         />
 
 
@@ -22,6 +22,7 @@
         android:id="@+id/Email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
         android:hint="Email"
         />
 
@@ -34,7 +35,7 @@
         />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Login"/>

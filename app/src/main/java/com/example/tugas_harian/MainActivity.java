@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText email;
     EditText pass;
-    Button button;
+    Button Tombol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         email = findViewById(R.id.Email);
         pass = findViewById(R.id.Pass);
-        button = findViewById(R.id.button);
+        Tombol = findViewById(R.id.button1);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        Tombol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                        "Welcome!!!!", Toast.LENGTH_LONG).show();
-                openActivity2();
+                if (!email.getText().toString().isEmpty() && !pass.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(),
+                            "Welcome!!!!", Toast.LENGTH_LONG).show();
+                    openActivity2();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Email/password salah", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
