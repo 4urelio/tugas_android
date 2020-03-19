@@ -1,5 +1,5 @@
 # tugas_android
-tugas harian pemrograman android
+tugas mingguan pemrograman android
 
 1. Pembuatan Hello world
 2. Pembuatan Home page
