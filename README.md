@@ -5,3 +5,4 @@ tugas mingguan pemrograman android
 2. Pembuatan Home page
 3. Menggunakan fragment untuk membuat tab
 4. Penambahan fitur registrasi dengan menggunakan sqlite
+5. Pembuatan notif wifi nyala dan mati menggunakan BroadcastReceiver
