@@ -7,40 +7,53 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.text.Html.fromHtml;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText email;
-    EditText pass;
-    Button Tombol;
+    EditText textEmail;
+    EditText textPass;
+    Button buttonTombol;
+    TextView textRegister;
+    DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        email = findViewById(R.id.Email);
-        pass = findViewById(R.id.Pass);
-        Tombol = findViewById(R.id.button1);
-
-        Tombol.setOnClickListener(new View.OnClickListener() {
+        db = new DatabaseHelper(this);
+        textEmail = (EditText) findViewById(R.id.Email);
+        textPass = (EditText) findViewById(R.id.Pass);
+        buttonTombol = (Button) findViewById(R.id.button);
+        textRegister = (TextView) findViewById(R.id.SignUp);
+        textRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!email.getText().toString().isEmpty() && !pass.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(),
-                            "Welcome!!!!", Toast.LENGTH_LONG).show();
-                    openActivity2();
+                Intent registerIntent = new Intent(MainActivity.this,BuatRegisterActivity.class);
+                startActivity(registerIntent);
+            }
+        });
+
+        buttonTombol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = textEmail.getText().toString().trim();
+                String pass = textPass.getText().toString().trim();
+                Boolean res = db.checkUser(email,pass);
+                if (res == true){
+                    Toast.makeText(MainActivity.this, "Successfully login", Toast.LENGTH_SHORT).show();
+                    Intent keHomepage = new Intent(MainActivity.this, Main2Activity.class);
+                    startActivity(keHomepage);
                 }
-                else{
-                    Toast.makeText(getApplicationContext(),"Email/password salah", Toast.LENGTH_SHORT).show();
+                else {
+                    Toast.makeText(MainActivity.this, "login Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-
-    public void openActivity2(){
-        Intent intent = new Intent( this, Main2Activity.class);
-        startActivity(intent);
     }
 }
