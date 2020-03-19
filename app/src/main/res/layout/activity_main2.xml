@@ -45,7 +45,7 @@
         android:id="@+id/viewpager"
         >
 
-    </androidx.viewpager.widget.ViewPager>
 
+    </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textRegister;
     DatabaseHelper db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
