@@ -17,12 +17,14 @@
         android:text="Login page"
         />
 
+
+
     <EditText
         android:id="@+id/Email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:hint="Email"
+        android:hint="Email\n"
         />
 
     <EditText

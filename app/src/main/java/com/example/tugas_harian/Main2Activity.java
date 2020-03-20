@@ -1,5 +1,6 @@
 package com.example.tugas_harian;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -7,14 +8,20 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Notification;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -31,6 +38,8 @@ public class Main2Activity extends AppCompatActivity {
     private NotificationManagerCompat notificationManager;
     private WifiManager wifiManager;
     private View view;
+    private static final String TAG = tab1.class.getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +81,6 @@ public class Main2Activity extends AppCompatActivity {
         notificationManager = NotificationManagerCompat.from(this);
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -113,6 +121,7 @@ public class Main2Activity extends AppCompatActivity {
         notificationManager.notify(1, notification);
 
     }
+
     public void wifiOff(){
         String title = "Notification";
         String message = "Wifi off";
@@ -123,8 +132,33 @@ public class Main2Activity extends AppCompatActivity {
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
-
         notificationManager.notify(2, notification);
 
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void scheduleJob(View view){
+        ComponentName componentName = new ComponentName(getApplicationContext(), myjobService.class);
+        JobInfo info = new JobInfo.Builder(123, componentName)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                .setPersisted(true)
+                .setPeriodic(15 * 60 * 1000) // dilakukan berapa menit ??
+                .build();
+
+        JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        int hasilkode = scheduler.schedule(info);
+        if (hasilkode == JobScheduler.RESULT_SUCCESS){
+            Log.i(TAG, "schedule berhasil ");
+        }else {
+            Log.i(TAG, "schedule tidak berhasil");
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void cancelJob(View view){
+        JobScheduler scheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        scheduler.cancel(123);
+        Log.i(TAG,"Canceled Job");
+    }
+
 }

@@ -1,18 +1,26 @@
 package com.example.tugas_harian;
 
 import android.app.NotificationManager;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.Toast;
 
 
 /**
@@ -44,5 +52,8 @@ public class tab1 extends Fragment {
             }
         });
 
+        Button startJob = (Button) view.findViewById(R.id.startJob);
+        Button stopJob = (Button) view.findViewById(R.id.stopJob);
     }
+
 }

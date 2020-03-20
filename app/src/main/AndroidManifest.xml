@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".NotifWifi"
@@ -22,6 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".myjobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            />
+        
+        <receiver android:name=".BuatBroadcastReciever"
+           android:enabled="true"
+            />
     </application>
 
 </manifest>
