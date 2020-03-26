@@ -130,7 +130,6 @@ public class Main2Activity extends AppCompatActivity {
                 .build();
 
         notificationManager.notify(1, notification);
-
     }
 
     public void wifiOff(){
