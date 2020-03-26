@@ -4,6 +4,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -39,7 +41,9 @@ public class Main2Activity extends AppCompatActivity {
     private WifiManager wifiManager;
     private View view;
     private static final String TAG = tab1.class.getSimpleName();
-
+    RecyclerView  recyclerView;
+    String s1[], s2[];
+    int images[] = {R.drawable.avengers,R.drawable.avengers2,R.drawable.avengers3,R.drawable.avengers3,R.drawable.avengers4};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,13 @@ public class Main2Activity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         notificationManager = NotificationManagerCompat.from(this);
+
+       // recyclerView = findViewById(R.id.recycleView);
+        recyclerView = null;
+
+        s1 = getResources().getStringArray(R.array.list_of_movies);
+        s2 = getResources().getStringArray(R.array.description);
+
     }
 
     @Override

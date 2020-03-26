@@ -7,13 +7,10 @@
     tools:context=".tab2">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Tab 2"
-        android:gravity="center"
-        android:textSize="40dp"
-        style="@style/TextAppearance.AppCompat.Display2"
-        />
+        tools:listitem="@layout/my_row"/>
 
 </LinearLayout>
