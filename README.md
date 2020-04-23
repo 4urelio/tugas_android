@@ -8,3 +8,4 @@ tugas mingguan pemrograman android
 5. Pembuatan notif wifi nyala dan mati menggunakan BroadcastReceiver
 6. Mencoba menggunakan job scheduler untuk tugas harian
 7. Penambahan fitur list judul film bioskop menggunakan RecyclerView
+8. Mengganti database dari Sqlite ke firebase
