@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "22749507652",
+    "firebase_url": "https://tugasharian-1f7cc.firebaseio.com",
+    "project_id": "tugasharian-1f7cc",
+    "storage_bucket": "tugasharian-1f7cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22749507652:android:2a31ae26122889abac0c11",
+        "android_client_info": {
+          "package_name": "com.example.tugas_harian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22749507652-uvs2386v7vds8qp69v0dg3su53r7ppnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSEx1dY0GvwZU6SWDWXmiT4sFEmQM40EM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22749507652-uvs2386v7vds8qp69v0dg3su53r7ppnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
