@@ -9,3 +9,4 @@ tugas mingguan pemrograman android
 6. Mencoba menggunakan job scheduler untuk tugas harian
 7. Penambahan fitur list judul film bioskop menggunakan RecyclerView
 8. Mengganti database dari Sqlite ke firebase
+9. Membuat aplikasi agar bisa membaca orientasi
